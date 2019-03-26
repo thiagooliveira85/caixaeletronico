@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Iniciando caixa eletrônico</title>
+		
+		<link rel="stylesheet" type="text/css" href="/layout/stylesheets/vendors.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/layout/stylesheets/algaworks.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/layout/stylesheets/application.css"/>
+		
+		<style type="text/css">
+		
+			html, body{
+				padding: 0;
+				margin: 0 auto;
+				margin-top: 50px;
+				width: 65%;
+				background-color: #fcf8e3;
+			}
+			
+			.btn-group-lg>.btn, .btn-lg {
+				padding: 20px 120px;
+				font-size: 25px;
+				border-radius: 10px;
+			}
+			
+			.btn{
+				margin-bottom: 10px;
+			}
+			
+			.card-img{
+				width: 150px;
+			}
+			
+			.row {
+				text-align: right;
+				font-family: unset;
+			}
+			
+			.table{
+				width: 0;
+				margin-left: 50px;
+			}
+			
+			.card-img {
+				width: 140px;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			function setaValor(valor){
+				$("#valor").val(valor);
+				$("#formulario").submit();
+			}
+		</script>
+		
+	</head>
+	<body>	
+	
+		<div class="container">
+			<form id="formulario" action="/sacar" method="get" class="form-vertical  js-form-loading">
+				<input type="hidden" id="valor" name="valor" value="">				
+				
+				  <div class="row">
+				    <div class="col-md-4">
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('20');">R$ 20</button>
+				    </div>
+				    <div class="col-md-4 ml-auto">
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('40');">R$ 40</button>
+				    </div>
+				  </div>
+				  
+				  <div class="row">
+				    <div class="col-md-4">
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('60');">R$ 60</button>
+				    </div>
+				    <div class="col-md-4 ml-auto">
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('80');">R$ 80</button>
+				    </div>
+				  </div>	
+				  
+				  <div class="row">
+				    <div class="col-md-4">
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('100');">R$ 100</button>
+				    </div>
+				    <div class="col-md-4 ml-auto">
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('200');">R$ 200</button>
+				    </div>
+				  </div>
+				  <div class="row">
+				    <div class="col-md-4">
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('300');">R$ 300</button>
+				    </div>
+				    <div class="col-md-4 ml-auto">
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('OUTRO');">OUTRO</button>
+				    </div>			    
+				  </div>
+			</form>
+		</div>		  	 	  
+		
+		<hr>	
+		<hr>
+		
+		<table class="table table-borderless">
+			 <tbody>
+			    <tr>
+			      <td>
+			      	<img src="/layout/images/100.png" class="card-img" alt="...">
+			      </td>
+			      <td>
+			      	<img src="/layout/images/100.png" class="card-img" alt="...">
+			      </td>			      		      
+			    </tr>
+			    <tr>
+			      <td>
+			      	<img src="/layout/images/20.png" class="card-img" alt="...">
+			      </td>			      		      
+			    </tr>
+			    <tr>
+			      <td>
+			      	<img src="/layout/images/50.png" class="card-img" alt="...">
+			      </td>			      		      
+			    </tr>
+			  </tbody>
+		</table>
+			
+		
+		<script src="/layout/javascripts/vendors.min.js"></script>
+		<script src="/layout/javascripts/algaworks.min.js"></script>
+	</body>
+</html>
