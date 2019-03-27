@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8" />
 		<title>Iniciando caixa eletrônico</title>
@@ -103,24 +104,11 @@
 		
 		<table class="table table-borderless">
 			 <tbody>
-			    <tr>
-			      <td>
-			      	<img src="/layout/images/100.png" class="card-img" alt="...">
-			      </td>
-			      <td>
-			      	<img src="/layout/images/100.png" class="card-img" alt="...">
-			      </td>			      		      
-			    </tr>
-			    <tr>
-			      <td>
-			      	<img src="/layout/images/20.png" class="card-img" alt="...">
-			      </td>			      		      
-			    </tr>
-			    <tr>
-			      <td>
-			      	<img src="/layout/images/50.png" class="card-img" alt="...">
-			      </td>			      		      
-			    </tr>
+			    <tr th:each="item : ${listaItens}">
+			      <td th:each="i : ${#numbers.sequence( 1, {item.quantidade})}">
+			      	<img th:src="${item.nota.path}" class="card-img" alt="...">
+			      </td>			     		      		      
+			    </tr>			    
 			  </tbody>
 		</table>
 			
