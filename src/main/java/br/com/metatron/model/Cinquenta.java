@@ -8,5 +8,5 @@ public class Cinquenta extends Nota {
 	public Cinquenta() {
 		super(VALOR, PATH);
 	}
-
+	
 }

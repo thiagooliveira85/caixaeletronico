@@ -1,11 +1,11 @@
 package br.com.metatron.model;
 
-public class Item {
+public class ItemNota {
 	
 	private Integer quantidade;
 	private Nota nota;
 	
-	public Item(Integer quantidade, Nota nota) {
+	public ItemNota(Integer quantidade, Nota nota) {
 		this.quantidade = quantidade;
 		this.nota = nota;
 	}

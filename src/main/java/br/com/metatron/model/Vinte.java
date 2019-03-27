@@ -8,5 +8,4 @@ public class Vinte extends Nota {
 	public Vinte() {
 		super(VALOR, PATH);
 	}
-
 }

@@ -11,6 +11,7 @@ import br.com.metatron.controller.CaixaEletronicoController;
 public class Configuracao {
 	
 	public static void main(String[] args) {
+		
 		SpringApplication.run(Configuracao.class, args);
 	}
 
