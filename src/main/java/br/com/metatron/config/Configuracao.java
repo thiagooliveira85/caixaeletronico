@@ -4,10 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
+import br.com.metatron.business.CalculadoraDeNotas;
 import br.com.metatron.controller.CaixaEletronicoController;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses=CaixaEletronicoController.class)
+@ComponentScan(basePackageClasses= {CaixaEletronicoController.class, CalculadoraDeNotas.class})
 public class Configuracao {
 	
 	public static void main(String[] args) {

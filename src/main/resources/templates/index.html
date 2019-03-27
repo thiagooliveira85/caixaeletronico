@@ -49,9 +49,9 @@
 		</style>
 		
 		<script type="text/javascript">
-			function setaValor(valor){
+			function enviaValor(valor){
 				$("#valor").val(valor);
-				$("#formulario").submit();
+				$("#botoes").submit();
 			}
 		</script>
 		
@@ -59,41 +59,41 @@
 	<body>	
 	
 		<div class="container">
-			<form id="formulario" action="/sacar" method="get" class="form-vertical  js-form-loading">
+			<form id="botoes" action="/sacar" method="get" class="form-vertical  js-form-loading">
 				<input type="hidden" id="valor" name="valor" value="">				
 				
 				  <div class="row">
 				    <div class="col-md-4">
-				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('20');">R$ 20</button>
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:enviaValor('20');">R$ 20</button>
 				    </div>
 				    <div class="col-md-4 ml-auto">
-				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('40');">R$ 40</button>
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:enviaValor('40');">R$ 40</button>
 				    </div>
 				  </div>
 				  
 				  <div class="row">
 				    <div class="col-md-4">
-				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('60');">R$ 60</button>
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:enviaValor('60');">R$ 60</button>
 				    </div>
 				    <div class="col-md-4 ml-auto">
-				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('80');">R$ 80</button>
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:enviaValor('80');">R$ 80</button>
 				    </div>
 				  </div>	
 				  
 				  <div class="row">
 				    <div class="col-md-4">
-				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('100');">R$ 100</button>
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:enviaValor('100');">R$ 100</button>
 				    </div>
 				    <div class="col-md-4 ml-auto">
-				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('200');">R$ 200</button>
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:enviaValor('200');">R$ 200</button>
 				    </div>
 				  </div>
 				  <div class="row">
 				    <div class="col-md-4">
-				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('300');">R$ 300</button>
+				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:enviaValor('300');">R$ 300</button>
 				    </div>
 				    <div class="col-md-4 ml-auto">
-				    	<button type="button" class="btn btn-primary btn-lg" onclick="javascript:setaValor('OUTRO');">OUTRO</button>
+				    	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">OUTRO</button>
 				    </div>			    
 				  </div>
 			</form>
@@ -111,6 +111,32 @@
 			    </tr>			    
 			  </tbody>
 		</table>
+		
+		<!-- MODAL -->
+		<form id="formulario" action="/sacar" method="get">
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">Informe o valor a ser sacado</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			          <div class="form-group">
+			            <label for="recipient-name" class="col-form-label">Valor:</label>
+			            <input type="text" name="valor" class="form-control" id="recipient-name">
+			          </div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="submit" class="btn btn-primary">SACAR</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</form>
+		<!-- FIM MODAL -->
 			
 		
 		<script src="/layout/javascripts/vendors.min.js"></script>

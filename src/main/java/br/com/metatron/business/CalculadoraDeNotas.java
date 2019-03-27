@@ -1,30 +1,15 @@
 package br.com.metatron.business;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
-import br.com.metatron.model.Cem;
-import br.com.metatron.model.Cinquenta;
-import br.com.metatron.model.Dez;
+import org.springframework.stereotype.Service;
+
 import br.com.metatron.model.ItemNota;
-import br.com.metatron.model.Vinte;
 import br.com.metatron.model.Nota;
 
+@Service
 public class CalculadoraDeNotas {
-	
-	public List<Nota> notas;
-	
-	public CalculadoraDeNotas() {
-		notas = new ArrayList<>();
-		notas.add(new Cem());
-		notas.add(new Cinquenta());
-		notas.add(new Vinte());
-		notas.add(new Dez());
-	}
 	
 	public List<ItemNota> getNotas(Double valor) {
 		
@@ -32,7 +17,7 @@ public class CalculadoraDeNotas {
 		
 		int valorSacado = valor.intValue();
 		
-		for (Nota nota : notas) {
+		for (Nota nota : ListaDeNotas.getNotas()) {
 			
 			int divisora 	= nota.getValor().intValue();
 			int qtdNotas 	= valorSacado / divisora;
@@ -45,7 +30,7 @@ public class CalculadoraDeNotas {
 			if (resto == 0)
 				break;
 			
-			if (resto < ultimoItemDaLista(notas))
+			if (resto < ultimoItemDaLista(ListaDeNotas.getNotas()))
 				throw new IllegalArgumentException("Valor informado não pode ser sacado");
 			
 			valorSacado = resto;
